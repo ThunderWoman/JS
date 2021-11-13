@@ -17,8 +17,10 @@
     let num2 = +prompt('Введіть друге число');
     if (num1 < num2) {
         document.write(num2 + "<br/>")
-    } else if (num1 > num2 || num1 === num2) {
+    } else if (num1 > num2) {
         document.write(num1 + "<br/>")
+    }else if (num1 === num2) {
+        document.write("Введені числа рівні і дорівнюють: " + num1 + "<br/>")
     }
 
     //     - У першому під'їзді квартири з 1 до 20. У другому з 21 по 48. У третьому з 49 по 90.

@@ -4,9 +4,9 @@
 // - з 5 значень стрічкового, числового та булевого типу
 // - та вивести його в консоль
 
-let number = [4, 5, 39, 20, 48, 58]
-let string = ['Julia', 'Hello', 'Kerim', 'Emir']
-let strNumBul = ['Julia', false, 45, true, 'Hello']
+let number = [4, 5, 39, 20, 48, 58];
+let string = ['Julia', 'Hello', 'Kerim', 'Emir'];
+let strNumBul = ['Julia', false, 45, true, 'Hello'];
 console.log(number);
 console.log(string);
 console.log(strNumBul);

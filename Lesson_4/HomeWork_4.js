@@ -1,8 +1,7 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
 function rectangleSquare(a, b) {
-    let rectangleS = a * b;
-    return rectangleS;
+    return a * b;
 }
 
 console.log(rectangleSquare(5, 7));
@@ -12,8 +11,7 @@ document.write('Площа прямокутника: ' + rectangleSquare(5, 7) +
 
 function circleSquare(r) {
     let rad = r ** 2;
-    let circleS = Math.PI * rad;
-    return circleS;
+    return Math.PI * rad;
 }
 
 console.log(circleSquare(5));
@@ -22,8 +20,7 @@ document.write('Площа круга: ' + circleSquare(5) + '</br>');
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіусом r
 
 function cylinderSquare(h, r) {
-    let cylinderS = 2 * Math.PI * r * (h + r);
-    return cylinderS;
+    return 2 * Math.PI * r * (h + r);
 }
 
 console.log(cylinderSquare(5, 7));
@@ -91,7 +88,11 @@ primOl(arrayPrimitive);
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
-let arrayObjects = [{id: 1, name: 'Julia', age: 35}, {id: 2, name: 'Natalia', age: 56}, {id: 3, name: 'Kerim', age: 4}, {id: 3, name: 'Emir', age: 2}];
+let arrayObjects = [{id: 1, name: 'Julia', age: 35}, {id: 2, name: 'Natalia', age: 56}, {
+    id: 3,
+    name: 'Kerim',
+    age: 4
+}, {id: 3, name: 'Emir', age: 2}];
 
 function objectAr(arr) {
     for (const elementAr of arr) {

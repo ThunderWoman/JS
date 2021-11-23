@@ -88,11 +88,7 @@ primOl(arrayPrimitive);
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
-let arrayObjects = [{id: 1, name: 'Julia', age: 35}, {id: 2, name: 'Natalia', age: 56}, {
-    id: 3,
-    name: 'Kerim',
-    age: 4
-}, {id: 3, name: 'Emir', age: 2}];
+let arrayObjects = [{id: 1, name: 'Julia', age: 35}, {id: 2, name: 'Natalia', age: 56}, {id: 3, name: 'Kerim', age: 4}, {id: 3, name: 'Emir', age: 2}];
 
 function objectAr(arr) {
     for (const elementAr of arr) {

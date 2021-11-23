@@ -52,7 +52,7 @@ while (c < 20) {
 
 let numbersArray = [10, 24, 63, 49, 65, 67, 27, 81, 19, 98];
 for (let i = 0; i < numbersArray.length; i++) {
-    console.log(numbersArray[i])
+    console.log(numbersArray[i]);
 }
 
 
@@ -60,14 +60,14 @@ for (let i = 0; i < numbersArray.length; i++) {
 
 let stringsArray = ['Thunder', 'Woman', 'Man', 'Mentor', 'Hello', 'juice', 'fruit', 'main', 'text', 'java'];
 for (let i = 0; i < stringsArray.length; i++) {
-    console.log(stringsArray[i])
+    console.log(stringsArray[i]);
 }
 
 // // - Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
 
 let strNumBulArray = ['Julia', true, "Kerim", 19, 'Emir', 17, 20, 26, false, 'sun', '34'];
 for (let i = 0; i < strNumBulArray.length; i++) {
-    console.log(strNumBulArray[i])
+    console.log(strNumBulArray[i]);
 }
 
 // - Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи

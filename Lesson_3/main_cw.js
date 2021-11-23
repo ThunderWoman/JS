@@ -7,7 +7,7 @@ let numbArray = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 let i = 0;
 while (i < numbArray.length) {
     console.log(numbArray[i]);
-    i++
+    i++;
 }
 
 //     2. перебрати його циклом for
@@ -23,7 +23,7 @@ while (i < numbArray.length) {
     if (i % 2 !== 0) {
         console.log(numbArray[i]);
     }
-    i++
+    i++;
 }
 
 // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
@@ -41,7 +41,7 @@ while (i < numbArray.length) {
     if (numbArray[i] % 2 === 0) {
         console.log(numbArray[i]);
     }
-    i++
+    i++;
 }
 
 // 6. перебрати циклом for та вивести  числа тільки парні  значення
@@ -78,7 +78,7 @@ let numbArrayNew = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 let u = numbArrayNew.length - 1;
 while (u >= 0) {
     console.log(numbArrayNew[u]);
-    u--
+    u--;
 }
 
 // 9.2. перебрати його циклом for
@@ -94,7 +94,7 @@ while (u >= 0) {
     if (u % 2 !== 0) {
         console.log(numbArrayNew[u]);
     }
-    u--
+    u--;
 }
 
 // 9.4. перебрати циклом for та вивести  числа тільки з непарним індексом
@@ -112,7 +112,7 @@ while (u >= 0) {
     if (numbArrayNew[u] % 2 === 0) {
         console.log(numbArrayNew[u]);
     }
-    u--
+    u--;
 }
 
 // 6. перебрати циклом for та вивести  числа тільки парні  значення

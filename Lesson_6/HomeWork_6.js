@@ -3,16 +3,16 @@
 let helloLow = 'hello world';
 let loremLow = 'lorem ipsum';
 let javaLow = 'javascript is cool';
-console.log('hello world'.length);
-console.log('lorem ipsum'.length);
-console.log('javascript is cool'.length);
+console.log(helloLow.length);
+console.log(loremLow.length);
+console.log(javaLow.length);
 
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
 
-console.log('hello world'.toUpperCase());
-console.log('lorem ipsum'.toUpperCase());
-console.log('javascript is cool'.toUpperCase());
+console.log(helloLow.toUpperCase());
+console.log(loremLow.toUpperCase());
+console.log(javaLow.toUpperCase());
 
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
@@ -20,9 +20,9 @@ console.log('javascript is cool'.toUpperCase());
 let helloUp = 'HELLO WORLD';
 let loremUp = 'LOREM IPSUM';
 let javaUp = 'JAVASCRIPT IS COOL';
-console.log('HELLO WORLD'.toLowerCase());
-console.log('LOREM IPSUM'.toLowerCase());
-console.log('JAVASCRIPT IS COOL'.toLowerCase());
+console.log(helloUp.toLowerCase());
+console.log(loremUp.toLowerCase());
+console.log(javaUp.toLowerCase());
 
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 

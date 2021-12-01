@@ -126,25 +126,23 @@ class Prince {
     };
 }
 
-let princeArray = [
-    new Prince('Misha', 39, 36),
-];
+let princeArray = new Prince('Misha', 39, 36);
 console.log(princeArray);
 
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 
-let ParaAr = (popeliushkaArray, princeArray) => {
-    for (let i of popeliushkaArray) {
-        if (princeArray.footsizefind === i.footsize) {
-            return "Ім'я попелюшки: ${item.name}";
+const Para = (popeliushkaArray, princeArray) => {
+    for (const popel of popeliushkaArray) {
+        if ( popel.footsize === princeArray.footsizefind ) {
+            return 'Ім"я попелюшки:' + popel.name
         }
     }
 };
 
-console.log(ParaAr(popeliushkaArray, princeArray));
+console.log(Para(popeliushkaArray, princeArray));
 
 
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
-let PopeliushkaFind = popeliushkaArray.find((i) => popeliushkaArray.footsize === princeArray.footsizefind);
+let PopeliushkaFind = popeliushkaArray.find((popel) => popel.footsize === princeArray.footsizefind);
 console.log(PopeliushkaFind);

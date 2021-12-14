@@ -8,15 +8,23 @@
     <title>Document</title>
 
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
         .menu {
-            transition: 1s;
+            transition: 2s;
             background: silver;
             min-height: 20px;
+            background-color: aquamarine;
+            width: 150px;
         }
 
         li {
-            height: 18px;
+            height: 25px;
             transition: 1s;
         }
 
@@ -26,8 +34,8 @@
         }
 
         .body-comment {
-            transition: 1s;
-            height: 40px;
+            transition: 2s;
+            height: 50px;
         }
 
         .hide-body {
@@ -46,7 +54,9 @@
     repellat velit, vitae!
 </div>
 
-<button id="btn">Натисти і я зникну)))</button>
+<button id="btn">Натисти і текст зникне)))</button>
+<hr>
+<button id="btn1">Натисти і я зникну)))</button>
 
 <hr>
 <input type="text" id="age">

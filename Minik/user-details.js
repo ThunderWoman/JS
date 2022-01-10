@@ -10,6 +10,7 @@
 // блоки с краткой информацией про post - в ряд по 5 объектов.
 
 let userDetails = JSON.parse(localStorage.getItem('userDetails'));
+console.log(userDetails);
 let wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
 
@@ -111,7 +112,7 @@ let getUser = fetch(`https://jsonplaceholder.typicode.com/users/${userDetails}`)
         userWrap.append(userDiv, wrapper);
     });
 
-let getPosts = fetch(`https://jsonplaceholder.typicode.com/users/USER_ID/posts`)
+let getPosts = (id) => fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
     .then(value => value.json())
     .then(posts => {
         for (let post of posts) {

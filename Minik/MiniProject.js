@@ -22,7 +22,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             button.className = "button";
             button.onclick = () => {
                 location.href = `user-details.html`;
-                localStorage.setItem('userDetails', JSON.stringify(user.id));
+                localStorage.setItem('userDetails', (userItem));
             }
             user.append(button);
             userDiv.appendChild(user);

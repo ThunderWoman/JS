@@ -9,40 +9,32 @@
 
 
 let postId = JSON.parse(localStorage.getItem('postId'));
-let divBlock = document.createElement('div');
-document.body.appendChild(divBlock);
-divBlock.classList.add('wrap');
-let getPost =
-    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+console.log(postId);
+console.log(postId.userId);
+let wrap = document.createElement('div');
+wrap.classList.add("postWrapCom");
+let postDetail = document.createElement('div');
+postDetail.classList.add("postDetail");
+postDetail.innerText = `User: ${postId.user.id}\nId: ${postId.user.id}\n Title: ${postId.title}\n Body:${postId.body}`;
+let button = document.createElement('button');
+button.classList.add('postBtn')
+button.innerText = 'View comments'
+button.onclick = function () {
+    button.disabled = true;
+    fetch('https://jsonplaceholder.typicode.com/posts/${postId}/comments')
         .then(value => value.json())
-        .then(post => {
-            let postBlock = document.createElement('div');
-            postBlock.classList.add('block');
-            for (const postUser in post) {
-                let p = document.createElement('p');
-                p.classList.add('border')
-                p.innerText = `${postUser}: ${post[postUser]}`;
-                postBlock.appendChild(p)
-            }
-            getCommentsByPost()
-            divBlock.appendChild(postBlock)
-        });
-let getCommentsByPost = () => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
-        .then(value => value.json())
-        .then(comments => {
-            let commentsUser = document.createElement('div');
-            commentsUser.classList.add('wrap');
-            for (const comment of comments) {
-                let commentUser = document.createElement('div');
-                commentUser.classList.add('comment-block')
-                for (const commentKey in comment) {
-                    let p = document.createElement('p');
-                    p.innerText = `${commentKey}: ${comment[commentKey]}`;
-                    commentUser.appendChild(p);
-                }
-                commentsUser.appendChild(commentUser);
-            }
-            divBlock.appendChild(commentsUser)
-        })
-}
+        .then(posts => {
+        let blockCom = document.createElement('div');
+        blockCom.classList.add('wrapPost')
+        for (let post of posts) {
+            let comment = document.createElement('div');
+            comment.classList.add('postDiv')
+            comment.innerText = `PostID: ${post.id}\nID: ${post.id}\nName: ${post.name}\nEmail: ${post.email}\nBody: ${post.body}`;
+            blockCom.append(comment);
+        }
+        wrap.append(blockCom);
+    });
+    console.log(postId);
+};
+wrap.append(postDetail, button);
+document.body.append(wrap);

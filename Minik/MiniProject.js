@@ -8,6 +8,7 @@
 
 let userDiv = document.createElement('div');
 userDiv.classList.add('userWrap');
+
 fetch('https://jsonplaceholder.typicode.com/users')
     .then((value) => value.json())
     .then(users => {
@@ -15,21 +16,16 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let user = document.createElement('div');
             user.classList.add('user');
             user.innerHTML = `<h3>${userItem.id}. ${userItem.name}</h3>`;
-            let array = [];
+
             let button = document.createElement('button');
             button.innerText = `More details`;
-            user.append(button);
-            userDiv.append(user);
-            button.onclick = (ev) => {
-                array = [];
+            button.className = "button";
+            button.onclick = () => {
                 location.href = `user-details.html`;
-                array.push({Id: userItem.id, Name: userItem.name, Username: userItem.username, Email: userItem.email, Street: userItem.address.street,
-                    Suite: userItem.address.suite, City: userItem.address.city, Zipcode: userItem.address.zipcode, Lat: userItem.address.geo.lat, Lag: userItem.address.geo.lag,
-                    Phone: userItem.phone, WebSite: userItem.website, CompanyName: userItem.company.name, CompanyCatchPhrase: userItem.company.catchPhrase, CompanyBs: userItem.company.bs,
-                });
-                localStorage.setItem('id', JSON.stringify(array));
-            };
+                localStorage.setItem('userDetails', JSON.stringify(user.id));
+            }
+            user.append(button);
+            userDiv.appendChild(user);
         }
         document.body.append(userDiv);
     });
-

@@ -10,18 +10,17 @@
 
 let postId = JSON.parse(localStorage.getItem('postId'));
 console.log(postId);
-console.log(postId.userId);
 let wrap = document.createElement('div');
 wrap.classList.add("postWrapCom");
 let postDetail = document.createElement('div');
 postDetail.classList.add("postDetail");
-postDetail.innerText = `User: ${postId.user.id}\nId: ${postId.user.id}\n Title: ${postId.title}\n Body:${postId.body}`;
+postDetail.innerHTML = `<h3>User: ${postId.id}</h3>,<h3>Title: ${postId.title}</h3>,<h3>Body:${postId.body}</h3>`;
 let button = document.createElement('button');
-button.classList.add('postBtn')
-button.innerText = 'View comments'
+button.classList.add('postBtn');
+button.innerHTML = 'View comments';
 button.onclick = function () {
     button.disabled = true;
-    fetch('https://jsonplaceholder.typicode.com/posts/${postId}/comments')
+    fetch('https://jsonplaceholder.typicode.com/posts/' +postId.userId + '/comments')
         .then(value => value.json())
         .then(posts => {
         let blockCom = document.createElement('div');
@@ -29,7 +28,7 @@ button.onclick = function () {
         for (let post of posts) {
             let comment = document.createElement('div');
             comment.classList.add('postDiv')
-            comment.innerText = `PostID: ${post.id}\nID: ${post.id}\nName: ${post.name}\nEmail: ${post.email}\nBody: ${post.body}`;
+            comment.innerHTML = `PostID: ${post.id}\nID: ${post.id}\nName: ${post.name}\nEmail: ${post.email}\nBody: ${post.body}`;
             blockCom.append(comment);
         }
         wrap.append(blockCom);

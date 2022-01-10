@@ -20,7 +20,7 @@ for (let item of userDetails) {
     postBlock.classList.add('postWrap');
     button.onclick = function () {
         button.disabled = true;
-        fetch(`https://jsonplaceholder.typicode.com/users/` + item.id + `/posts`)
+        fetch('https://jsonplaceholder.typicode.com/users/' + item.id + '/posts')
             .then(value => value.json())
             .then(items => {
                 for (let item of items) {
@@ -30,11 +30,10 @@ for (let item of userDetails) {
                     title.innerHTML = `<h3>${item.title}</h3>`;
                     let btn = document.createElement('button');
                     btn.classList.add('btn');
-                    btn.innerHTML = `<h4>Details of current post</h4>`;
+                    btn.innerHTML = `<p>Details of current post</p>`;
                     btn.onclick = function () {
-                        window.open("post-details.html");
-                        let postId = 'postId';
-                        localStorage.setItem(postId, JSON.stringify(item));
+                        location.href = `post-details.html`;
+                        localStorage.setItem('postId', JSON.stringify(item));
                     };
                     postDiv.append(title, btn);
                     postBlock.append(postDiv);
@@ -42,9 +41,9 @@ for (let item of userDetails) {
                 document.body.appendChild(postBlock);
             });
     };
-    for (let i in item) {
+    for (let key in item) {
         let element = document.createElement('div');
-        element.innerText = `${i} - ${item[i]}`;
+        element.innerText = `${key} - ${item[key]}`;
         postDetails.appendChild(element);
     }
     postDetails.append(button);

@@ -8,8 +8,8 @@
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
 
 
-let postId = JSON.parse(localStorage.getItem('postId'));
-console.log(postId);
+let postIdDetail = JSON.parse(localStorage.getItem('postIdDetail'));
+console.log(postIdDetail);
 let wrap = document.createElement('div');
 wrap.classList.add("postWrapCom");
 let postDetail = document.createElement('div');
@@ -33,7 +33,7 @@ button.onclick = function () {
         }
         wrap.append(blockCom);
     });
-    console.log(postId);
+    console.log(postIdDetail);
 };
 wrap.append(postDetail, button);
 document.body.append(wrap);

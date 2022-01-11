@@ -12,7 +12,7 @@
 let userDetails = JSON.parse(localStorage.getItem('key'));
 let wrap = document.createElement('div');
 wrap.classList.add('wrap');
-for (let userDetail of userDetails) {
+for (let item of userDetails) {
     let button = document.createElement('button');
     button.classList.add('button1');
     button.innerText = 'post of current user';
@@ -20,7 +20,7 @@ for (let userDetail of userDetails) {
     postWrap.classList.add('postWrap');
     button.onclick = function () {
         button.disabled = true;
-        fetch('https://jsonplaceholder.typicode.com/users/' + userDetail.id + '/posts')
+        fetch('https://jsonplaceholder.typicode.com/users/' + item.id + '/posts')
             .then(response => response.json())
             .then(itemsAr => {
             for (let itemId of itemsAr) {
@@ -33,7 +33,8 @@ for (let userDetail of userDetails) {
                 btnTitle.innerHTML = `<h4>Details of current post</h4>`;
                 btnTitle.onclick = function () {
                     location.href = `post-details.html`;
-                    localStorage.setItem('postDetail', JSON.stringify(itemId));
+                    let key = `postDetail`;
+                    localStorage.setItem(key, JSON.stringify(itemId));
                 };
                 postDiv.append(postTitle, btnTitle);
                 postWrap.append(postDiv);
@@ -41,9 +42,9 @@ for (let userDetail of userDetails) {
             document.body.appendChild(postWrap);
         });
     };
-    for (let key in userDetail) {
+    for (let key in item) {
         let element = document.createElement('div');
-        element.innerText = `${key} - ${userDetail[key]}`;
+        element.innerText = `${key} - ${item[key]}`;
         wrap.appendChild(element);
     }
     wrap.append(button);

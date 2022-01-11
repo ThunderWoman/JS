@@ -11,10 +11,10 @@ userDiv.classList.add('userWrap');
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(value => value.json())
     .then(users => {
-        for (let user of users) {
+        for (let item of users) {
             let userBlock = document.createElement('div');
             userBlock.classList.add('user');
-            userBlock.innerHTML = `<h3>${user.id}. ${user.name}</h3>`;
+            userBlock.innerHTML = `<h3>${item.id}. ${item.name}</h3>`;
             let array = [];
             let buttonElement = document.createElement('button');
             buttonElement.innerText = 'More details';
@@ -24,21 +24,21 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 array = [];
                 location.href = `user-details.html`;
                 array.push({
-                    Id: userItem.id,
-                    Name: userItem.name,
-                    Username: userItem.username,
-                    Email: userItem.email,
-                    Street: userItem.address.street,
-                    Suite: userItem.address.suite,
-                    City: userItem.address.city,
-                    Zipcode: userItem.address.zipcode,
-                    Lat: userItem.address.geo.lat,
-                    Lag: userItem.address.geo.lag,
-                    Phone: userItem.phone,
-                    WebSite: userItem.website,
-                    CompanyName: userItem.company.name,
-                    CompanyCatchPhrase: userItem.company.catchPhrase,
-                    CompanyBs: userItem.company.bs,
+                    id: item.id,
+                    name: item.name,
+                    username: item.username,
+                    email: item.email,
+                    street: item.address.street,
+                    suite: item.address.suite,
+                    city: item.address.city,
+                    zipcode: item.address.zipcode,
+                    lat: item.address.geo.lat,
+                    lag: item.address.geo.lag,
+                    phone: item.phone,
+                    website: item.website,
+                    companyName: item.company.name,
+                    companyCatchPhrase: item.company.catchPhrase,
+                    companyBs: item.company.bs,
                 });
                 localStorage.setItem('key', JSON.stringify(array))
             };

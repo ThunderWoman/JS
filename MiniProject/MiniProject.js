@@ -9,27 +9,39 @@
 let userDiv = document.createElement('div');
 userDiv.classList.add('userWrap');
 fetch('https://jsonplaceholder.typicode.com/users')
-    .then((value) => value.json())
+    .then(value => value.json())
     .then(users => {
-        for (let userItem of users) {
-            let user = document.createElement('div');
-            user.classList.add('user');
-            user.innerHTML = `<h3>${userItem.id}. ${userItem.name}</h3>`;
+        for (let user of users) {
+            let userBlock = document.createElement('div');
+            userBlock.classList.add('user');
+            userBlock.innerHTML = `<h3>${user.id}. ${user.name}</h3>`;
             let array = [];
-            let button = document.createElement('button');
-            button.innerText = `More details`;
-            user.append(button);
-            userDiv.append(user);
-            button.onclick = (ev) => {
+            let buttonElement = document.createElement('button');
+            buttonElement.innerText = 'More details';
+            userBlock.append(buttonElement);
+            userDiv.append(userBlock);
+            buttonElement.onclick = function (ev) {
                 array = [];
                 location.href = `user-details.html`;
-                array.push({Id: userItem.id, Name: userItem.name, Username: userItem.username, Email: userItem.email, Street: userItem.address.street,
-                    Suite: userItem.address.suite, City: userItem.address.city, Zipcode: userItem.address.zipcode, Lat: userItem.address.geo.lat, Lag: userItem.address.geo.lag,
-                    Phone: userItem.phone, WebSite: userItem.website, CompanyName: userItem.company.name, CompanyCatchPhrase: userItem.company.catchPhrase, CompanyBs: userItem.company.bs,
+                array.push({
+                    Id: userItem.id,
+                    Name: userItem.name,
+                    Username: userItem.username,
+                    Email: userItem.email,
+                    Street: userItem.address.street,
+                    Suite: userItem.address.suite,
+                    City: userItem.address.city,
+                    Zipcode: userItem.address.zipcode,
+                    Lat: userItem.address.geo.lat,
+                    Lag: userItem.address.geo.lag,
+                    Phone: userItem.phone,
+                    WebSite: userItem.website,
+                    CompanyName: userItem.company.name,
+                    CompanyCatchPhrase: userItem.company.catchPhrase,
+                    CompanyBs: userItem.company.bs,
                 });
-                localStorage.setItem('id', JSON.stringify(array));
+                localStorage.setItem('key', JSON.stringify(array))
             };
         }
         document.body.append(userDiv);
     });
-

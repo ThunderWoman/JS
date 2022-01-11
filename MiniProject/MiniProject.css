@@ -1,4 +1,3 @@
-
 .userWrap {
     display: flex;
     flex-wrap: wrap;
@@ -43,11 +42,11 @@
 }
 
 .postData {
-    height: 200px;
+    height: 300px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     border: 1px solid black;
-    text-align: center;
     width: 18%;
     position: relative;
 }
@@ -75,14 +74,11 @@
     align-self: center;
     margin: 1%;
     padding: 1%;
-    width: 20%;
+    width: 100%;
     flex-direction: column;
     background: gainsboro;
     border: 1px solid cornflowerblue;
 }
-
-}
-
 
 .postBtn {
     width: 80%;
@@ -99,11 +95,7 @@
 }
 
 .postDiv {
-    width: 48%;
+    width: 24%;
     border: 1px solid black;
-    display: flex;*/
-    /*    margin: 1%;*/
-    /*    width: 15%;*/
-    /*    padding: 1%;*/
-    /*    flex-direction: column;*/
+    display: flex;
 }

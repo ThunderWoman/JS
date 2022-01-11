@@ -9,10 +9,10 @@
 // user-details.html - блок с информацией про user вверху страницы. Кнопка ниже, на 90% ширины страницы, по центру.
 // блоки с краткой информацией про post - в ряд по 5 объектов.
 
-let userDetails = JSON.parse(localStorage.getItem('id'));
-let postDetails = document.createElement('div');
-postDetails.classList.add('wrap');
-for (let item of userDetails) {
+let userDetails = JSON.parse(localStorage.getItem('key'));
+let wrap = document.createElement('div');
+wrap.classList.add('wrap');
+for (let userDetail of userDetails) {
     let button = document.createElement('button');
     button.classList.add('button1');
     button.innerText = 'post of current user';
@@ -20,34 +20,33 @@ for (let item of userDetails) {
     postWrap.classList.add('postWrap');
     button.onclick = function () {
         button.disabled = true;
-        fetch(`https://jsonplaceholder.typicode.com/users/${item.id}/posts`)
-            .then(value => value.json())
-            .then(items => {
-                for (let item of items) {
-                    let postDiv = document.createElement('div');
-                    postDiv.classList.add('postData');
-                    let title = document.createElement('div');
-                    title.innerHTML = `<h3>${item.title}</h3>`;
-                    let btn = document.createElement('button');
-                    btn.classList.add('btn');
-                    btn.innerHTML = `<p>Details of current post</p>`;
-                    btn.onclick = function () {
-                        location.href = `post-details.html`;
-                        let itemKey = 'postIdDetail';
-                        localStorage.setItem(itemKey, JSON.stringify(item));
-                    };
-                    postDiv.append(title, btn);
-                    postWrap.append(postDiv);
-                }
-                document.body.appendChild(postWrap);
-            });
+        fetch('https://jsonplaceholder.typicode.com/users/' + userDetail.id + '/posts')
+            .then(response => response.json())
+            .then(itemsAr => {
+            for (let itemId of itemsAr) {
+                let postDiv = document.createElement('div');
+                postDiv.classList.add('postData');
+                let postTitle = document.createElement('div');
+                postTitle.innerHTML = `<h3>${itemId.title}</h3>`;
+                let btnTitle = document.createElement('button');
+                btnTitle.classList.add('postDivDetailButton');
+                btnTitle.innerHTML = `<h4>Details of current post</h4>`;
+                btnTitle.onclick = function () {
+                    location.href = `post-details.html`;
+                    localStorage.setItem('postDetail', JSON.stringify(itemId));
+                };
+                postDiv.append(postTitle, btnTitle);
+                postWrap.append(postDiv);
+            }
+            document.body.appendChild(postWrap);
+        });
     };
-    for (let key in item) {
+    for (let key in userDetail) {
         let element = document.createElement('div');
-        element.innerText = `${key} - ${item[key]}`;
-        postDetails.appendChild(element);
+        element.innerText = `${key} - ${userDetail[key]}`;
+        wrap.appendChild(element);
     }
-    postDetails.append(button);
+    wrap.append(button);
 }
-document.body.appendChild(postDetails);
+document.body.appendChild(wrap);
 

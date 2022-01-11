@@ -12,7 +12,7 @@ let wrap = document.createElement('div');
 wrap.classList.add("postWrapCom");
 let postDetail = document.createElement('div');
 postDetail.classList.add("postDetail");
-postDetail.innerHTML = `<h4>userId: ${parse.userId}; Id: ${parse.id}; Title: ${parse.title}; Body: ${parse.body}</h4>`;
+postDetail.innerHTML = `<h4>userId: ${parse.id};<h4>Id: ${parse.id};</h4><p>Title: ${parse.title}; Body: ${parse.body}</p>`;
 let button = document.createElement('button');
 button.classList.add('postBtn');
 button.innerHTML = 'View comments';
@@ -26,7 +26,7 @@ button.onclick = function () {
             for (let post of posts) {
                 let comments = document.createElement('div');
                 comments.classList.add('postDiv');
-                comments.innerHTML = `<h4>PostID: ${post.postId}; ID: ${post.id}; Name: ${post.name}; Email: ${post.email}; Body: ${post.body}</h4>`;
+                comments.innerHTML = `<h4>PostID: ${post.id};</h4> <h4>ID: ${post.id};</h4><h4>Name: ${post.name};</h4><h4>Email: ${post.email};</h4><p>Body: ${post.body}</p>`;
                 blockCom.append(comments);
             }
             wrap.append(blockCom);

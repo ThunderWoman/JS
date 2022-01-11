@@ -76,8 +76,8 @@
     padding: 1%;
     width: 100%;
     flex-direction: column;
-    background: gainsboro;
-    border: 1px solid cornflowerblue;
+    background: lavender;
+    border: 1px solid black;
 }
 
 .postBtn {
@@ -95,7 +95,13 @@
 }
 
 .postDiv {
-    width: 24%;
-    border: 1px solid black;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    width: 24%;
+    flex-direction: column;
+    background: lavender;
+    border: 1px solid black;
 }
